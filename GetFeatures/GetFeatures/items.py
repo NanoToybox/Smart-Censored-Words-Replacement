@@ -11,4 +11,6 @@ import scrapy
 class GetfeaturesItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
+    key = scrapy.Field()
     content = scrapy.Field()
+    counter = scrapy.Field()
