@@ -11,14 +11,14 @@ from pyltp import Segmentor
 
 class GetfeaturesPipeline(object):
 	def __init__(self):
-		#self.file = codecs.open('test_single.txt', 'wb', encoding='utf-8')
+		self.file = codecs.open('test_multi.txt', 'a+', encoding='utf-8')
 		self.segmentor = Segmentor()
+		self.segmentor.load('/Users/David/Applications/ltp_data/cws.model')  # 加载模型
 
 	def process_item(self, item, spider):
-		self.segmentor.load('/Users/David/Applications/ltp_data/cws.model')  # 加载模型
-		words = list(self.segmentor.segment(item["content"].encode("utf-8")) ) # 分词
-		for word in words:
-			self.file.write(word.decode("utf-8"))
+		segments = list(self.segmentor.segment(item["content"].encode("utf-8")) ) # 分词
+		for segment in segments:
+			self.file.write(segment.decode("utf-8"))
 			self.file.write("\n".decode("utf-8"))
 		return item
 

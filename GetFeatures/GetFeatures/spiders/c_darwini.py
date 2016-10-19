@@ -8,13 +8,15 @@ from GetFeatures.items import GetfeaturesItem
 #complexity depends on pv per run
 class C_Darwini(scrapy.Spider):
 	name = "c_darwini"
-	base_url = "https://cn.bing.com/search?q="
 
 	def start_requests(self):
-		#dirty_words = self.file = codecs.open('test_single.txt', 'wb', encoding='utf-8')
-		urls = [
-			"http://cn.bing.com/search?q=毛泽东"
-		]
+		base_url = "https://cn.bing.com/search?q=" #https://www.google.com/search?q=
+		urls = []
+		dirty_words_file = codecs.open('dirtywords_short.txt', 'r', encoding='utf-8')
+		word = dirty_words_file.readline().rstrip(u'\n')
+		while(word != u''):
+			urls.append(base_url+word.encode("utf-8"))
+			word = dirty_words_file.readline().rstrip(u'\n')
 		for url in urls:
 			yield scrapy.Request(url=url, callback=self.parse_bing)
 
