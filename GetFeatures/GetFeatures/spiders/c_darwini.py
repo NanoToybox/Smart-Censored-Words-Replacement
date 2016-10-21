@@ -12,7 +12,7 @@ class C_Darwini(scrapy.Spider):
 		base_url = "https://cn.bing.com/search?q=" #https://www.google.com/search?q=
 		urls = {}
 		#reading "dirty words"
-		dirty_words_file = codecs.open('dirtywords_short.txt', 'r', encoding='utf-8') 
+		dirty_words_file = codecs.open('GetFeatures/samples/sample_19.txt', 'r', encoding='utf-8') 
 		word = dirty_words_file.readline().rstrip(u'\n')
 		#construct urls
 		while(word != u''):

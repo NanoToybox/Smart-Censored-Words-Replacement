@@ -1,5 +1,4 @@
 #coding=utf-8
-import json
 import codecs
 from random import shuffle
 
@@ -10,10 +9,9 @@ shuffle(words)
 
 counter = 0
 sample_counter = 0
-sample = codecs.open('samples/sample_' + str(sample_counter) + ".txt", 'w', encoding='utf-8')
+sample = codecs.open('sample_' + str(sample_counter) + ".txt", 'w', encoding='utf-8')
 
-
-#randomly separate samples
+#randomly separate samples into different files
 for w in words:
 	sample.write(w)
 	counter += 1
@@ -21,5 +19,5 @@ for w in words:
 		sample_counter += 1
 		counter = 0
 		sample.close()
-		sample = codecs.open('samples/sample_' + str(sample_counter) + ".txt", 'w', encoding='utf-8')
+		sample = codecs.open('sample_' + str(sample_counter) + ".txt", 'w', encoding='utf-8')
 sample.close()
