@@ -10,7 +10,7 @@ class GetfeaturesPipeline(object):
 	total_items = 0
 
 	def __init__(self):
-		self.file = codecs.open('GetFeatures/results/test_sample.json', 'w', encoding='utf-8') #test_sample , raw_results
+		self.file = codecs.open('GetFeatures/results/test_sample_0.json', 'w', encoding='utf-8') #test_sample , raw_results
 		self.segmentor = Segmentor()
 		self.segmentor.load('/Users/David/Applications/ltp_data/cws.model')  # 加载模型
 
