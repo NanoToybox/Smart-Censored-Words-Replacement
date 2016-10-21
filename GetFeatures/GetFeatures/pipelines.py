@@ -2,7 +2,6 @@
 import json
 import codecs
 import urllib
-import json
 from pyltp import Segmentor
 
 class GetfeaturesPipeline(object):
