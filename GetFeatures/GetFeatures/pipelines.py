@@ -36,6 +36,7 @@ class GetfeaturesPipeline(object):
 
 	def close_spider(self, spider):
 		#dump json file
+		self.file.write(unicode(json.dumps(self.items,  ensure_ascii= False, encoding="utf-8"), "utf-8"))
 		self.segmentor.release()  # 释放模型
 		self.file.close()
 

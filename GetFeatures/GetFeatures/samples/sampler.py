@@ -2,7 +2,7 @@
 import codecs
 from random import shuffle
 
-threshold = 300
+threshold = 1000
 # move words from original txt into sample files
 dirty_words_file = codecs.open('before_sampling.txt', 'r', encoding='utf-8')
 words = dirty_words_file.readlines()
