@@ -3,8 +3,8 @@ clear ; close all; clc
 
 X = load("x_feat_0.txt");
 
-K = 5; 
-max_iters = 50;
+K = 20; 
+max_iters = 10;
 
 % initialize the centroids randomly. 
 initial_centroids = kMeansInitCentroids(X, K);

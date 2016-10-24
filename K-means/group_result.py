@@ -23,6 +23,9 @@ for line in cluster_id:
 			value.append(x_name[counter].rstrip('\n'))
 		counter += 1
 
+for k,v in cluster.iteritems():
+	print len(v)
+	
 group_file.write(json.dumps(cluster,  ensure_ascii= False, encoding="utf-8"))
 
 group_file.close()

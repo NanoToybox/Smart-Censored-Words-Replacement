@@ -51,9 +51,16 @@ for i=1:max_iters
         pause;
     end
     
+    previous_centroids = centroids;
     % Given the memberships, compute new centroids
     centroids = computeCentroids(X, idx, K);
+    fprintf('distance moved : %f \n', sum(sum((previous_centroids - centroids).^2)));
+
 end
+
+printf(' count: ');
+
+
 
 % Hold off if we are plotting progress
 if plot_progress
