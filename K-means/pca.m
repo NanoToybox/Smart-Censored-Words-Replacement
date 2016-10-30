@@ -19,11 +19,8 @@ S = zeros(n);
 % Note: When computing the covariance matrix, remember to divide by m (the
 %       number of examples).
 %
-fprintf('start count sigma\n');
 Sigma = 1/m * X' * X;
-fprintf('start pca svd\n');
 [U,S,V] = svd(Sigma);
-fprintf('end pca svd\n');
 
 
 
