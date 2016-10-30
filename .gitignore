@@ -1,2 +1,5 @@
 *.pyc
+
+# this file is "bfg --strip-blobs-bigger-than 99M"ed. Thx!
 PCA_training_set.txt
+
