@@ -13,3 +13,9 @@ Use search results and K-means to cluster censored words(cn), then replace each 
 使用了屏蔽字的搜索结果作为特征，用K-means算法进行分类。
 
 刚学了机器学习，这个是练手的。
+
+
+TODO: weighted PCA
+note: 
+  Ignore PCA result due to GitHub file size limit(100M).
+  Dependency description missing.
