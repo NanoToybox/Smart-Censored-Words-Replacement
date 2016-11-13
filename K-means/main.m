@@ -13,3 +13,4 @@ initial_centroids = kMeansInitCentroids(X, K);
 [centroids, idx] = runkMeans(X, initial_centroids, max_iters);
 
 save "output/out_test.txt" idx
+save "output/centroids.txt" centroids
