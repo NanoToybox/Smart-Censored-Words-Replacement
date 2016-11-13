@@ -12,13 +12,17 @@ class C_Darwini(scrapy.Spider):
 		base_url = "https://cn.bing.com/search?q=" #https://www.google.com/search?q=
 		urls = {}
 		#reading "dirty words"
-		dirty_words_file = codecs.open('GetFeatures/samples/before_sampling' '.txt', 'r', encoding='utf-8') 
-		word = dirty_words_file.readline().rstrip(u'\n')
+		dirty_words_file = codecs.open('GetFeatures/samples/before_sampling.txt', 'r', encoding='utf-8') 
+		lines = dirty_words_file.readlines()
+
 		#construct urls
-		while(word != u''):
-			urls[word.encode("utf-8")]=(base_url+word.encode("utf-8"))
-			word = dirty_words_file.readline().rstrip(u'\n')
+		for word in lines:
+			w = word.rstrip(u'\n').encode("utf-8")
+			#if (urls.has_key(w)):
+			#	print "duplicate key: " + w
+			urls[w]=(base_url + w)
 		dirty_words_file.close()
+	
 		#construct requests
 		for key,url in urls.iteritems():
 			request = scrapy.Request(url=url, callback=self.parse_bing)

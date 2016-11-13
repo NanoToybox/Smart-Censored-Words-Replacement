@@ -13,15 +13,15 @@ features = feat_file.readlines()
 #print features[len(features)-1].rstrip(u'\n')
 
 start_file_no = 0
-end_file_no = 17
+end_file_no = 18
 for i in range(start_file_no, end_file_no+1):
 	#load json into dict
-	result_file = codecs.open('result_'+ str(i) +'.json', 'r', encoding='utf-8')
+	result_file = codecs.open('results_161113/result_'+ str(i) +'.json', 'r', encoding='utf-8')
 	raw_lines = result_file.readlines()
 	raw_dict = json.loads(''.join(raw_lines))
 	#output file
-	x_file = codecs.open('feat_data/x_'+ str(i) +'.txt', 'w', encoding='utf-8')
-	x_feat_file = codecs.open('feat_data/x_feat_'+ str(i) +'.txt', 'w', encoding='utf-8')
+	x_file = codecs.open('results_161113/feat_data/x_'+ str(i) +'.txt', 'w', encoding='utf-8')
+	x_feat_file = codecs.open('results_161113/feat_data/x_feat_'+ str(i) +'.txt', 'w', encoding='utf-8')
 
 	x_dict = {}
 	#featurize X

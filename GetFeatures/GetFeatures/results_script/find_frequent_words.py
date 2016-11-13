@@ -9,10 +9,10 @@ sieve_list = sieve_file.readlines()
 
 #files
 start_file_no = 0
-end_file_no = 17
+end_file_no = 18
 for i in range(start_file_no, end_file_no+1):
 	# load json
-	result_file = codecs.open('result_'+ str(i) +'.json', 'r', encoding='utf-8')
+	result_file = codecs.open('results_161113/result_'+ str(i) +'.json', 'r', encoding='utf-8')
 	raw_lines = result_file.readlines()
 	raw_dict = json.loads(''.join(raw_lines))
 	#count appearence

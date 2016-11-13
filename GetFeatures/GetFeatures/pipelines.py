@@ -41,4 +41,4 @@ class GetfeaturesPipeline(object):
 		self.file.close()
 
 	def __open_file__(self, no):
-		return codecs.open('/private/var/folders/jr/dqch5q_50ysg4g9pqhpj61xc0000gn/T/Seagate Backup Plus Drive/mac_buffer/results/result_' + str(no) +'.json', 'w', encoding='utf-8') #test_sample , raw_results
+		return codecs.open('GetFeatures/results_script/results_161113/result_' + str(no) +'.json', 'w', encoding='utf-8')
