@@ -38,13 +38,14 @@ grouped_file = codecs.open('group_test.txt', 'r', encoding='utf-8')
 data = json.load(grouped_file)
 output_file = codecs.open('case_study_result.txt', 'w', encoding='utf-8')
 
-cases = [u"gallfans.com",u" SUCK "]
+cases = [u"40779.com",u"西藏3.15事件"]
 
 feature_file = codecs.open('../../GetFeatures/GetFeatures/results_script/test_feature.txt', 'r', encoding='utf-8')
 features = feature_file.readlines()
 
 for i in range(0, len(cases)):
 	(file_id, line_id) = find_word_index(cases[i])
+	print str(file_id) + " " + str(line_id)
 	result = find_features(features, file_id, line_id)
 	output_file.write("\n" + cases[i] + " -- \n")
 	for w in result:
